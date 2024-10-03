@@ -7,6 +7,9 @@ name = "pypi"
 ipdb = "*"
 faker = "*"
 pytest = "7.1.3"
+inquirer = "3.4"
+pyfiglet = "*"
+tabulate = "*"
 
 [dev-packages]
 
