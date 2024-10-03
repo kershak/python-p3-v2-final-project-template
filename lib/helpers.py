@@ -24,21 +24,21 @@ def find_rma_by_id():
     else: 
         print("RMA not found")
         
-# def find_rma():
-#     rma_number = input("Enter RMA number to find: ")
-#     rmas = Rma.find_by_number(rma_number)
-#     if rmas:
-#         for rma in rmas:
-#             print(rma)
-#     else:
-#         print("RMA not found.")
+def find_rma():
+    rma_number = input("Enter RMA number to find: ")
+    rmas = Rma.find_by_number(rma_number)
+    if rmas:
+        for rma in rmas:
+            print(rma)
+    else:
+        print("RMA not found.")
 
 def create_rma():
-    rma_number = input("Enter the RMA number: ").upper
+    rma_number = input("Enter the RMA number: ")
     received_on = input("Enter date received: ")
-    products = input("Enter products on this RMA: ").upper
+    #products = input("Enter products on this RMA: ").upper
     try:
-        new_rma = Rma.create(rma_number, received_on, products)
+        new_rma = Rma.create(rma_number, received_on)
         print(f"Sucess: {new_rma}")
     except Exception as exc:
         print("Error creating RMA: ", exc)
@@ -51,8 +51,8 @@ def update_rma():
             Rma.rma_number = str(rma).upper
             received_on = input("Enter revised date: ")
             Rma.received_on = str(received_on)
-            products= input("Enter updated list of products: ")
-            Rma.products = str(products).upper
+            #products= input("Enter updated list of products: ")
+            #Rma.products = str(products)
             Rma.update(id, rma, received_on)
             print(f'Success updating: {rma_update}')
         except Exception as exc:

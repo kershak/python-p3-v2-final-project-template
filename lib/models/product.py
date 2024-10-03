@@ -34,8 +34,8 @@ class Product:
     @classmethod
     def find_by_model(cls, model):
         sql = """SELECT * FROM products WHERE model = ?"""
-        row = CURSOR.execute(sql, (model,)).fetchall()
-        return cls.instance_from_db(row) if row else None
+        rows = CURSOR.execute(sql, (model,)).fetchall()
+        return [cls.instance_from_db(row) for row in rows]
 
     @classmethod
     def get_all(cls):

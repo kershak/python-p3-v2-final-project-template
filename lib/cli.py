@@ -7,7 +7,7 @@ from helpers import (
     exit_program,
     list_rmas,
     find_rma_by_id,
-    #find_rma,
+    find_rma,
     create_rma,
     update_rma,
     delete_rma,
